@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chronicles of Bengal: Colonial Age Archive</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap">
+<style>
+:root{color-scheme:dark;--p:#e8dbca;--am:#d9a441;--mu:#a8a08c;--bg:#0c0d0e}
+*{box-sizing:border-box}html,body{height:100%;height:100dvh;margin:0;overflow:hidden;background:var(--bg);color:#e7e3d6;font:14px/1.6 "Courier Prime",monospace}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+.vig{position:fixed;inset:0;pointer-events:none;z-index:30;box-shadow:inset 0 0 120px #000e}
+header{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;justify-content:space-between;padding:14px 22px;background:linear-gradient(#000d,transparent);font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--mu)}
+header b{font-family:Cinzel,serif;color:#d6d1c0}
+main{display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+main::-webkit-scrollbar{display:none}
+section{position:relative;flex:0 0 100vw;height:100%;scroll-snap-align:start;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr);gap:28px;align-items:center;padding:70px 6vw 120px;
+background:radial-gradient(circle at 78% 30%,hsl(var(--h) 60% 40% /.55),transparent 38%),linear-gradient(115deg,#0c0b09 30%,hsl(var(--h) 35% 14%) 100%)}
+section:before{content:attr(data-e);position:absolute;right:-1vw;bottom:70px;font-size:min(46vw,420px);line-height:1;opacity:.16;filter:grayscale(.6) sepia(.6);pointer-events:none}
+section:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(transparent,#000a),repeating-linear-gradient(90deg,#0000 0 40px,#0003 40px 41px);clip-path:polygon(0 60%,12% 40%,25% 55%,40% 30%,55% 50%,70% 25%,85% 45%,100% 30%,100% 100%,0 100%);background-color:hsl(var(--h) 30% 8%)}
+article,aside{position:relative;z-index:5}
+article{background:#000a;backdrop-filter:blur(3px);border-left:2px solid #9a927a99;padding:22px 24px;max-height:100%;overflow-y:auto;box-shadow:0 20px 50px #000a}
+.yr{margin:0;font-size:clamp(34px,6vw,58px);font-weight:700;letter-spacing:.12em;line-height:1.1}
+.yr i{color:#6e6a5b;font-style:normal;font-weight:400}
+.dt{margin:2px 0 14px;padding-bottom:8px;border-bottom:1px solid #3a372d;font-size:11px;letter-spacing:.3em;color:var(--am);text-transform:uppercase}
+article p{margin:0 0 10px;text-align:justify;color:#d2cebf;font-size:13.5px}
+.st{text-align:center;color:#8a8573;letter-spacing:.5em;margin:6px 0}
+h2{margin:6px 0 0;font:900 clamp(18px,2.6vw,26px)/1.3 Cinzel,serif;letter-spacing:.2em;text-transform:uppercase;text-align:center}
+aside{display:flex;flex-direction:column;gap:14px;align-items:flex-start;max-height:100%;overflow-y:auto;padding:4px}
+.note{background:radial-gradient(#f4eee1,#dfd3bd);color:#2b2519;font:14px/1.4 "Special Elite","Courier Prime",monospace;padding:14px 16px;border:3px double #a99874;box-shadow:0 12px 30px #000a;max-width:360px;position:relative}
+.note:nth-child(odd){transform:rotate(1.2deg)}.note:nth-child(even){transform:rotate(-1deg)}
+.note h4{margin:0 0 6px;font:900 12px Cinzel,serif;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid #2b25194d;padding-bottom:4px}
+.note ul{margin:0;padding-left:18px}
+.stamp{position:absolute;top:-12px;right:-10px;border:2px solid #a32a20;color:#a32a20;font:700 10px "Courier Prime";padding:2px 8px;letter-spacing:.15em;transform:rotate(6deg);background:#f4eee1}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px}
+.flow span{border:1px solid #2b25194d;padding:3px 8px;background:#fff6}
+.bar{display:flex;height:34px;font-size:11px;color:#fff;margin:4px 0}.bar div{display:grid;place-items:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;align-content:start}
+.fc{background:#16150f;border:1px dashed #6e6a5b;padding:12px;cursor:pointer;min-height:76px;font-size:13px}
+.fc b{display:block;color:var(--am)}.fc span{display:none;color:#e7e3d6}.fc.o span{display:block}
+.nv{position:fixed;top:50%;z-index:50;width:46px;height:46px;border-radius:50%;border:1px solid #6e6a5b99;background:#14130fcc;color:#d6d1c0;font-size:20px;cursor:pointer;transform:translateY(-50%)}
+.nv:hover,.nv:focus-visible{outline:2px solid var(--am)}
+#pv{left:10px}#nx{right:10px}
+footer{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:16px 4vw calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,#000 40%);border-top:1px solid #2c2a20}
+#dots{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.08em;margin-bottom:6px;overflow-x:auto;scrollbar-width:none;gap:4px}
+#dots button{all:unset;cursor:pointer;color:#8a8573;text-align:center;padding:2px 4px;white-space:nowrap}
+#dots button.on{color:var(--am);font-weight:700}
+#trk{height:5px;background:#2c2a20;border-radius:3px;overflow:hidden}#pg{height:100%;width:0;background:linear-gradient(90deg,#8a5a1a,#f0c36b);transition:width .3s}
+.ph{margin:0;position:relative;z-index:5;width:100%;max-width:440px;background:#f4eee1;padding:8px 8px 6px;border:1px solid #a99874;box-shadow:0 14px 34px #000b;transform:rotate(-1.2deg)}
+.ph img{display:block;width:100%;height:clamp(150px,30vh,260px);object-fit:cover;filter:sepia(.35) contrast(1.05)}
+.ph figcaption{color:#2b2519;font:12px/1.3 "Special Elite","Courier Prime",monospace;padding-top:6px}
+.ph .ms{display:grid;place-items:center;height:120px;border:2px dashed #8a7c5a;color:#5a4c30;font:12px/1.4 "Special Elite",monospace;text-align:center;padding:8px;word-break:break-word}
+.note{z-index:5}
+@media (max-width:760px){section{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:14px;overflow-y:auto;padding:58px 14px 110px}section>*,aside>*{flex-shrink:0}article{order:1;max-height:none;overflow:visible;padding:16px}aside{display:contents}aside>.note{order:2;max-width:none;transform:none}.ph{order:0;max-width:none;transform:none}.cards{order:1}.nv{display:none}section:before{opacity:.1}header{padding:10px 14px;font-size:9px;letter-spacing:.12em}#dots{font-size:9px}.yr{font-size:34px}}
+@media (prefers-reduced-motion:reduce){main{scroll-behavior:auto}}
+</style></head><body>
+<div class="grain"></div><div class="vig"></div>
+<header><span><b>Archival Records</b> // Colonial Bengal</span><span>File <b id="no">01</b> / <span id="tot"></span></span></header>
+<main id="m"></main>
+<button class="nv" id="pv" aria-label="Previous slide">‹</button><button class="nv" id="nx" aria-label="Next slide">›</button>
+<footer><div id="dots"></div><div id="trk"><div id="pg"></div></div></footer>
+<script src="images.js"></script>
+<script>
+var S=[
+{y:"Before 1757",e:"🏛️",h:40,d:"Who ruled Bengal first",t:"Rulers before the British",
+p:["Bengal was always rich, so many people came to rule it. Ashoka’s Mauryas took North Bengal in the 3rd century BC, then the Guptas ruled for about four centuries.","In the 7th century Shashanka built the first independent Bengal state. After his death came a hundred years of chaos, <i>Matsyanyaya</i>. The Bengali Pala kings then ruled for almost 400 years, followed by the Sen dynasty from Karnataka."],
+n:[["Order of rulers",'<div class="flow"><span>Maurya</span>→<span>Gupta</span>→<span>Shashanka</span>→<span>Pala</span>→<span>Sen</span>→<span>Sultans</span>→<span>Mughals</span></div>'],["Trick","Matsyanyaya = “fish law”: big fish eat small fish. No king, no safety."]]},
+{y:"1204–1610",e:"🕌",h:30,d:"Sultans and Mughals",t:"Muslim rule in Bengal",
+p:["1204: Bakhtiyar Khilji defeated Lakshman Sen. In 1338 Fakhruddin Mubarak Shah of Sonargaon made Bengal independent from Delhi. Ilias Shah united most of Bengal, and Alauddin Husain Shah was loved for harmony, arts and literature.","1538: Humayun took Gaur, but Sher Khan drove him out. 1576: Akbar’s Mughals took West and North Bengal. East Bengal held out under the twelve Baro Bhuiyan, led by Isha Khan. In 1610 Islam Khan won and renamed Dhaka Jahangirnagar."],
+n:[["Dates to learn","<ul><li>1204 Khilji</li><li>1338 Independent Sultanate</li><li>1538 Humayun at Gaur</li><li>1610 Dhaka captured</li></ul>"],["Remember","Baro = 12, Bhuiyan = landlords. 12 landlords stopped Akbar’s army."]]},
+{y:"1498–1690",e:"⛵",h:205,d:"Europe arrives",t:"Traders come for silk",
+p:["In 1498 Vasco da Gama of Portugal reached Calicut. Soon Dutch, Danish, British and French East India Companies were formed. They wanted Bengal’s silk, fine cloth and spices.","Kashimbazar made 22,000 bales of silk a year. The British won the race with trading posts (kuthi), an army and factories. In 1690 Job Charnock bought Kolkata, Sutanoti and Gobindopur for 1,200 taka."],
+n:[["Who came",'<div class="flow"><span>Portuguese</span><span>Dutch</span><span>Danish</span><span>French</span><span>British ★</span></div>'],["Trick","3 villages for 1,200 taka became the future Kolkata. The British started small."]]},
+{y:"1757",e:"⚔️",h:5,d:"June 23 • Plassey",t:"Battle of Plassey",
+p:["Siraj-ud-daulah became Nawab at 22. He faced the growing English, Maratha attacks, and plots by his aunt Ghosheti Begum, commander Mir Jafar and rich traders like Jagat Seth and Umichand.","He lost at Plassey and was killed. The English made Mir Jafar Nawab, but Robert Clive held the real power. In 1764, at Buxar, Mir Qasim fell and the English formally ruled."],
+n:[["Why the British won","<ul><li>Betrayal inside the court</li><li>Better army and tactics</li><li>Inexperienced young Nawab</li><li>Common people stayed out of it</li></ul>"],["Date to remember","23 June 1757. The start of the colonial age."]]},
+{y:"1765",e:"⚖️",h:45,d:"Treaty of Shah Alam II",t:"Dual government",
+p:["After Buxar, Clive made a treaty with Mughal Emperor Shah Alam II. The Nawab kept administration and justice. The Company took revenue and defence.","This is called dual government (diarchy). The Nawab was blamed but had no money or army. The Company had the power but no duty to the people. Taxes rose and greed grew."],
+n:[["Who had what",'<div class="bar"><div style="flex:1;background:#8a3b2b">Nawab: law</div><div style="flex:1;background:#4b5b7a">Company: money + army</div></div>'],["Trick","Responsibility without power, and power without responsibility."]]},
+{y:"1176 BS",e:"☠️",h:0,d:"1770 • Chhiyattorer Monnontor",t:"The Great Famine",
+p:["Three years of drought hit Bengal. Farmers could not pay, but the Company did not lower the tax.","Millions died, about one third of Bengal’s people."],
+n:[["The chain","<div class=flow><span>Drought</span>→<span>No relief on tax</span>→<span>Mass death</span></div>"],["Death toll",'<div class="bar"><div style="flex:1;background:#8a3b2b">1/3 died</div><div style="flex:2;background:#3f5a4a">Survived</div></div>']]},
+{y:"1772–1793",e:"🏙️",h:210,d:"Governor-Generals",t:"Kolkata and Zamindars",
+p:["In 1772 Warren Hastings made Kolkata the capital. From 1773 the Governors became Governor-Generals: Hastings, Cornwallis, Wellesley, Bentinck, Hardinge, Dalhousie. They built post and railways to hold the empire together.","The Permanent Settlement of 1793 created a class of Zamindars who stayed loyal to the British. Farmers and the cotton industry were crushed."],
+n:[["Society then",'<div class="flow"><span>British rulers</span><span>Zamindars</span><span>Small middle class</span><span>Poor farmers</span></div>'],["Trick","1772 capital, 1793 settlement. Hastings first, Cornwallis next."]]},
+{y:"1781–1857",e:"📚",h:150,d:"Bengal Renaissance",t:"A new awakening",
+p:["The British trained a loyal educated class: Calcutta Madrasa (1781), Sanskrit College (1791), Serampore Press (1821), Calcutta University (1857). William Carey wrote Bengali grammar and textbooks.","Rammohun Roy and Vidyasagar fought Sati and backed widow remarriage. Derozio taught free thinking. Abdul Latif and Syed Ameer Ali brought Muslims to modern education. Writers: Bankim, Madhusudan, Rabindranath, Mir Mosharraf, Sarat Chandra, Nazrul."],
+n:[["Institutions","<ul><li>1781 Madrasa</li><li>1791 Sanskrit College</li><li>1821 Press</li><li>1857 University</li></ul>"],["Stamp","Education also woke people up against British rule."]]},
+{y:"1857–58",e:"🔥",h:15,d:"Sepoy Mutiny",t:"First freedom struggle",
+p:["After about a hundred years of Company rule, sepoys rose in 1857. Causes: exploitation, hurt religious feelings and unequal treatment. Mongol Pandey and Rajob Ali led in Bengal. Lakshmibai, Tatia Tope and Bahadur Shah joined.","The English crushed it with better weapons. On 2 August 1858 the Government of India Act ended Company rule. The Crown took direct control (1858 to 1947)."],
+n:[["Before 1857","Fakir-Sannyasi rebellion, Titumir’s peasant revolt and Haji Shariatullah’s Faraizi movement."],["Date","2 Aug 1858: Company out, Crown in."]]},
+{y:"1905",e:"✂️",h:280,d:"Lord Curzon",t:"Partition of Bengal",
+p:["Curzon said Bengal was too big to govern. East Bengal, with Dhaka as capital, would be a separate province. The real aim was to divide and rule.","Muslims in the east hoped for progress. Hindu leaders and Congress protested without asking Muslim leaders, so the communities grew apart. In 1906 the Muslim League was formed in Dhaka. The partition was cancelled in 1911."],
+n:[["Timeline",'<div class="flow"><span>1903 proposal</span>→<span>1905 split</span>→<span>1906 League</span>→<span>1911 undone</span></div>'],["Trick","Divide and Rule: split the people, rule the people."]]},
+{y:"1905–1930s",e:"✊",h:130,d:"Swadeshi and armed struggle",t:"Movements against rule",
+p:["Swadeshi meant boycott British goods and use local ones. Revolutionary groups Jugantar and Anushilan trained youth for armed struggle.","Heroes: Khudiram, Bagha Jatin, Masterda Surya Sen and Pritilata Waddedar, the first woman martyr. National movements: Non-cooperation, Khilafat, Quit India. Leaders: Subhash Bose, C.R. Das, Suhrawardy and Fazlul Huq."],
+n:[["Two paths","Peaceful: boycott, non-cooperation, Quit India. Armed: Jugantar, Anushilan."],["Pritilata","First woman martyr of the anti-British movement."]]},
+{y:"1940–1947",e:"🗺️",h:60,d:"Lahore to Partition",t:"Pakistan and the end of British rule",
+p:["In 1940 A.K. Fazlul Huq presented the Lahore Resolution for Muslim-majority states. It later became the Pakistan Resolution.","In 1947 India split into India and Pakistan and British rule ended. Bengal split too: East Bengal joined Pakistan and West Bengal joined India. Sarat Bose and Suhrawardy tried for a united Bengal but failed. East Bengal’s people were free of British rule, but not yet truly free."],
+n:[["Next chapter","This leads to the Liberation War."],["Dates","1940 Lahore, 1947 Partition."]]},
+{y:"Recall",e:"🧠",h:90,d:"Tap a card to reveal",t:"Quick test",c:[["Plassey: who won, when?","Company under Clive, 23 June 1757."],["What is dual government?","Nawab: administration. Company: money and defence (1765)."],["Famine victims?","One third of the population (1176 BS)."],["Who made Kolkata capital?","Warren Hastings, 1772."],["What ended Company rule?","Act of 2 August 1858."],["Partition of Bengal dates?","Split 1905, cancelled 1911."],["Why did the Muslim League form?","Muslims wanted their own platform (Dhaka, 1906)."],["First woman martyr?","Pritilata Waddedar."]]}];
+var IM=window.IMAGES||{},CP=window.CAPTIONS||{},FD=typeof IMAGE_FOLDER=="string"?IMAGE_FOLDER:"images/";
+function esc(x){return String(x).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}
+function ph(s){var f=IM[s.t];if(!f)return"";return'<figure class="ph"><img src="'+esc(FD+encodeURI(f))+'" alt="'+esc(s.t)+'" loading="lazy"><figcaption>'+esc(CP[s.t]||s.t)+'</figcaption></figure>'}
+document.addEventListener("error",function(e){var i=e.target;if(i.tagName=="IMG"&&i.closest(".ph")){var d=document.createElement("div");d.className="ms";d.textContent="Image not found: "+decodeURI(i.getAttribute("src"));i.replaceWith(d)}},true);
+var m=document.getElementById("m"),dots=document.getElementById("dots"),cur=0;
+S.forEach(function(s,i){
+var a=s.c?'<aside style="grid-column:1/-1;align-self:start"><div class="cards">'+s.c.map(function(c){return'<div class="fc" tabindex="0" role="button"><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join("")+'</div></aside>':'<aside>'+ph(s)+s.n.map(function(n,j){return'<div class="note">'+(j==1&&s.n[1][0].match(/Trick|Remember|Stamp|Date/)?'<span class="stamp">REMEMBER</span>':'')+'<h4>'+n[0]+'</h4>'+(n[1].charAt(0)=="<"?n[1]:'<div>'+n[1]+'</div>')+'</div>'}).join("")+'</aside>';
+m.insertAdjacentHTML("beforeend",'<section data-e="'+s.e+'" style="--h:'+s.h+'"><article><h3 class="yr"><i>-</i> '+s.y+' <i>-</i></h3><div class="dt">'+s.d+'</div>'+(s.p?s.p.map(function(x){return'<p>'+x+'</p>'}).join(""):"")+'<div class="st">★ ★ ★</div><h2>'+s.t+'</h2></article>'+a+'</section>');
+dots.insertAdjacentHTML("beforeend",'<button data-i="'+i+'">'+s.y.split("–")[0]+'</button>')});
+document.getElementById("tot").textContent=String(S.length).padStart(2,"0");
+function go(i){i=(i+S.length)%S.length;m.scrollTo({left:i*m.clientWidth})}
+function up(i){cur=i;document.getElementById("no").textContent=String(i+1).padStart(2,"0");document.getElementById("pg").style.width=(i+1)/S.length*100+"%";[].forEach.call(dots.children,function(b,j){b.className=j==i?"on":""})}
+document.getElementById("pv").onclick=function(){go(cur-1)};document.getElementById("nx").onclick=function(){go(cur+1)};
+dots.onclick=function(e){var b=e.target.closest("button");if(b)go(+b.dataset.i)};
+addEventListener("keydown",function(e){if(e.key=="ArrowRight")go(cur+1);if(e.key=="ArrowLeft")go(cur-1)});
+m.addEventListener("scroll",function(){up(Math.round(m.scrollLeft/m.clientWidth))});
+document.addEventListener("click",function(e){var f=e.target.closest(".fc");if(f)f.classList.toggle("o")});
+document.addEventListener("keydown",function(e){if((e.key=="Enter"||e.key==" ")&&e.target.classList.contains("fc")){e.preventDefault();e.target.classList.toggle("o")}});
+up(0);
+</script></body></html>
